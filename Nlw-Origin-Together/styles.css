@@ -27,6 +27,30 @@ h1 {
   color: var(--title-color);
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--base-color);
+  color: var(--text-color-light);
+  height: 3.5rem;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
+  font: 500 1rem 'DM Sans', sans-serif;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  background-color: var(--base-color-alt);
+  color: var(--base-color);
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(270deg, #a152ef, #a882d3, #f8f8f8);
+}
+.divider-2 {
+  background: linear-gradient(270deg, #f8f8f8, #a882d3, #a152ef);
+}
 /* variaveis */
 :root {
   --base-color: #261932;
@@ -41,6 +65,15 @@ h1 {
 /* Layout */
 #header {
   border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 2rem;
+  display: flex;
+
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: var(--body-color);
 }
 
 nav {
@@ -59,8 +92,11 @@ nav {
   color: var(--base-color);
 }
 
+main {
+  margin-top: 4.5rem;
+}
+
 .container {
-  width: 100%;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
@@ -75,6 +111,10 @@ nav {
 }
 
 /* Home */
+#home {
+  overflow: hidden;
+}
+
 #home .container {
   margin: 0;
 }
@@ -107,4 +147,14 @@ nav {
 #home .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  text-align: center;
+}
+
+#home .text h1 {
+  margin-bottom: 1rem;
+}
+
+#home .text p {
+  margin-bottom: 2rem;
+  max-width: 100%;
 }
