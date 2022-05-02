@@ -1,3 +1,18 @@
+/* variaveis */
+:root {
+  /* colors */
+  --hue: 218;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-primary: #000;
+  --text-color-light: #fff;
+  --body-color: hsl(0 0% 98%);
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -37,11 +52,12 @@ h1 {
   border-radius: 0.25rem;
   font: 500 1rem 'DM Sans', sans-serif;
   transition: 0.4s;
+  color: var(--text-color-light);
 }
 
 .btn:hover {
   background-color: var(--base-color-alt);
-  color: var(--base-color);
+  color: var(--text-color-primary);
 }
 
 .divider-1 {
@@ -50,16 +66,6 @@ h1 {
 }
 .divider-2 {
   background: linear-gradient(270deg, #f8f8f8, #a882d3, #a152ef);
-}
-/* variaveis */
-:root {
-  --base-color: #261932;
-  --base-color-second: #a152ef;
-  --base-color-alt: #d3cadd;
-  --title-color: #d3cadd;
-  --text-color: #777;
-  --text-color-light: #ffffff;
-  --body-color: #ffffff;
 }
 
 /* Layout */
@@ -90,6 +96,23 @@ nav {
 }
 .logo span {
   color: var(--base-color);
+}
+
+.text h1 span {
+  background-image: linear-gradient(
+    to rightm n,
+    var(--base-color),
+    var(--base-color-alt),
+    var(--text-color-primary),
+    var(--text-color-primary)
+  );
+
+  color: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  /* Adicionado: */
+  -webkit-text-fill-color: transparent;
 }
 
 main {
