@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -37,9 +41,10 @@ body {
   -webkit-font-smoothing: antialised;
 }
 
-h1 {
+.title {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
+  -webkit-font-smoothing: auto;
 }
 
 .btn {
@@ -51,7 +56,7 @@ h1 {
   padding: 0 2rem;
   border-radius: 0.25rem;
   font: 500 1rem 'DM Sans', sans-serif;
-  transition: 0.4s;
+  transition: 0.6s;
   color: var(--text-color-light);
 }
 
@@ -82,14 +87,7 @@ h1 {
   background: var(--body-color);
 }
 
-nav {
-  width: 100%;
-  height: 4.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
+/* Logo */
 .logo {
   font: 700 1.31rem 'poppins', sans-serif;
   color: var(--base-color-second);
@@ -98,13 +96,87 @@ nav {
   color: var(--base-color);
 }
 
+main {
+  margin-top: calc(4.5rem + 2rem);
+}
+/* navigation */
+
+nav {
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul.grid {
+  gap: 4rem;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+nav ul li a {
+  transition: color 0.3s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--base-color);
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+  transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Monstrar menu */
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav.show .menu {
+  display: grid;
+  place-content: center;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
 .text h1 span {
   background-image: linear-gradient(
-    to rightm n,
-    var(--base-color),
-    var(--base-color-alt),
+    to right,
     var(--text-color-primary),
-    var(--text-color-primary)
+    var(--text-color-primary),
+    var(--base-color-alt),
+    var(--base-color)
   );
 
   color: black;
@@ -113,10 +185,6 @@ nav {
 
   /* Adicionado: */
   -webkit-text-fill-color: transparent;
-}
-
-main {
-  margin-top: 4.5rem;
 }
 
 .container {
